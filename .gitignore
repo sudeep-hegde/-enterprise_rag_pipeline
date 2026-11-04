@@ -1,0 +1,56 @@
+# enterprise_rag_pipeline .gitignore
+# Specifies untracked files to protect secrets, avoid committing local run artifacts, and keep the repository clean.
+
+# AI assistant instructions (kept local per request)
+CLAUDE.md
+.claude/
+
+# Environment variables and credentials (use .env.example for template)
+.env
+.env.*
+!.env.example
+
+# Python bytecode and runtime caches
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments (precautionary for local tooling)
+.venv/
+venv/
+ENV/
+env/
+
+# Vector database & local document storage
+chroma_data/
+chroma_db/
+data/
+*.chroma
+*.sqlite3
+
+# Benchmark, profiling, and test outputs (persisted via container bind mounts)
+bench/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+locust.log
+*.log
+
+# Podman / container runtime artifacts
+*.pid
+podman.sock
+
+# IDEs and developer environment files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS artifacts
+.DS_Store
+Thumbs.db
